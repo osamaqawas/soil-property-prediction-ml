@@ -1,0 +1,16 @@
+soil-hyperspectral-ml/
+│
+├── data/
+│   └── README.md
+│
+├── src/
+│   ├── train_xgboost.py
+│   └── __init__.py
+│
+├── notebooks/
+│   └── xgboost_experiment.ipynb
+│
+├── figures/
+│
+├── README.md
+└── requirements.txt

@@ -1,0 +1,191 @@
+🌍 Quantitative Determination of Soil Properties Using Machine Learning and Hyperspectral Data
+Author: Osama Alqawasmeh
+Institution: Yarmouk University, Jordan
+Project: Hyperspectral-Based Soil Contamination Prediction
+📌 Project Overview
+
+This project develops machine learning models to predict soil contamination indicators—specifically Iron (Fe)—using a combination of:
+
+Hyperspectral data (ASD spectroradiometer, EnMAP/Sentinel-2)
+
+Environmental parameters (pH, slope, elevation, carbonate, OM, clay, NDVI, etc.)
+
+XRF geochemical oxides (SiO₂, Al₂O₃, Fe₂O₃, CaO, MgO)
+
+Topographic & proximity variables (distance to water, distance to roads/stations)
+
+The goal is to integrate remote sensing, field measurements, and machine learning to build a robust prediction model for soil contamination across complex environments, including mountainous and variable terrain.
+
+🎯 Research Objective
+
+Develop a reproducible machine learning pipeline for:
+
+Predicting soil Fe concentrations
+
+Evaluating environmental and spectral controls
+
+Identifying key variables using feature importance
+
+Testing the generalization performance through cross-validation
+
+Supporting soil contamination analysis along river systems in Jordan
+
+🧠 Machine Learning Model
+
+This repository includes a complete, ready-to-run implementation of the XGBoost Regressor, one of the most powerful gradient-boosting algorithms.
+
+The model performs:
+
+Train–test split
+
+Scaling using StandardScaler
+
+Model training with XGBoost
+
+Metrics evaluation (R², RMSE, MAE)
+
+5-fold cross-validation
+
+Feature importance ranking
+
+Actual vs. predicted plots
+
+📁 Repository Structure
+soil-hyperspectral-ml/
+│
+├── data/                 
+│   └── README.md         # Instructions on data format
+│
+├── src/
+│   ├── train_xgboost.py  # Main training script
+│   ├── utils.py          # Helper functions (optional)
+│   └── __init__.py
+│
+├── notebooks/
+│   └── xgboost_experiment.ipynb  # Jupyter notebook version
+│
+├── figures/
+│   ├── feature_importance.png
+│   └── actual_vs_predicted.png
+│
+├── README.md
+└── requirements.txt
+
+📥 Data Requirements
+
+The dataset is not included for privacy reasons.
+
+To run the code, create a file:
+
+data/Fe.xlsx
+
+
+Your Excel file must contain the following columns:
+
+pH
+
+Slope
+
+Carbonate
+
+Clay %
+
+OM %
+
+Elevation
+
+SiO2
+
+Al2O3
+
+NDVI
+
+Dis_Water
+
+Dis_Station
+
+Fe (target variable)
+
+▶️ How to Run the Code
+1. Install dependencies
+pip install -r requirements.txt
+
+2. Run the main script
+python src/train_xgboost.py
+
+3. After running, the following outputs are generated automatically:
+
+✔ figures/feature_importance.png
+
+✔ figures/actual_vs_predicted.png
+
+✔ Printed model performance
+
+✔ Cross-validation statistics
+
+📊 Model Evaluation Metrics
+
+The script prints:
+
+R² Score – goodness of fit
+
+RMSE – model prediction error
+
+MAE – absolute prediction error
+
+5-Fold CV results – generalization accuracy
+
+📈 Generated Plots
+Feature Importance Plot
+
+Shows which variables contribute most to predicting iron concentration.
+
+Actual vs Predicted Plot
+
+Visual evaluation of model accuracy.
+
+🛰️ Scientific Contribution
+
+This project demonstrates the integration of:
+
+Spectral preprocessing (CR, MSC, SNV, derivatives)
+
+Hyperspectral reflectance (0.4–2.4 µm)
+
+Satellite-based indices (NDVI)
+
+Environmental parameters
+
+Machine learning models
+
+Soil contamination assessment
+
+The workflow aligns with modern approaches for soil quality monitoring, environmental risk assessment, and remote sensing–based soil science.
+
+💡 Future Extensions
+
+You can expand this repository by adding:
+
+Random Forest model
+
+SVR / ANN models
+
+New soil properties (Clay, Carbonate, OM, Fe₂O₃)
+
+Band-depth or wavelength-specific predictors
+
+Integration with Google Earth Engine
+
+Full prediction maps for study area
+
+📬 Contact
+
+For collaboration, feel free to reach out:
+
+Osama Alqawasmeh
+
+Osamaalqawasmeh41@gmail.com
+ 
+Yarmouk University, Jordan
+
+GIS • Remote Sensing • Machine Learning • Hyperspectral Analysis
